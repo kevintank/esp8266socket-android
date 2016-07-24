@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context="com.iotesp8266.kevin.iotesp8266.MainActivity">
 
     <TextView
         android:id="@+id/id_tv"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:text="fasdfasdf"
+        android:padding="12dp"
+        android:textSize="13dp"
         />
+
     <ListView
         android:id="@+id/id_list"
         android:layout_width="match_parent"
@@ -21,12 +27,23 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         />
-
-    <Button
-        android:id="@+id/id_btn"
-        android:layout_width="50pt"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="Insert!!"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/id_on"
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="pump on"
+            />
+        <Button
+            android:id="@+id/id_off"
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="pump off"
         />
+    </LinearLayout>
 </LinearLayout>
