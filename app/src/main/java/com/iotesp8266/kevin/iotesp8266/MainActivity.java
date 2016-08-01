@@ -243,10 +243,13 @@ public class MainActivity extends Activity implements Runnable, OnClickListener,
                 String cmd_buffer = null;
 
                if(view.getId() == R.id.id_on) {
-                    cmd_buffer = "wO";
+                    cmd_buffer = "wo";
                 }else if(view.getId() == R.id.id_off){
-                    cmd_buffer = "wF";
+                    cmd_buffer = "wf";
                 }
+
+                Log.d("DEBUG", "---button-------> " +  cmd_buffer);
+
                 data_size = cmd_buffer.length();
                 Log.d("DEBUG", "----data_size--------> " + data_size);
 
@@ -259,13 +262,13 @@ public class MainActivity extends Activity implements Runnable, OnClickListener,
                 int s = ((size[1] << 8) & 0xff00) + (size[0] & 0x00ff);
                 Log.d("DEBUG", "------결과------> " + s);
 
-                // #O   열기
-                // #F   닫기
-                // #S    현재 상태 구하기
-                // #T    온도 구하기
+                // wo   열기
+                // wf   닫기
+                // ws    현재 상태 구하기
+                // wt    습도 구하기
                 //  m_out_stream.write(NM_SEND_OS_TYPE);
-                m_out_stream.write(size);
-                m_out_stream.write(data);
+                m_out_stream.write(size);     //사이즈 보내고
+                m_out_stream.write(data);    //버퍼
                 m_out_stream.flush();
 
 
