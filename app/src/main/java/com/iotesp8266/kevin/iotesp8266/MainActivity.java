@@ -295,7 +295,7 @@ public class MainActivity extends Activity implements Runnable, OnClickListener,
     @Override
     protected void onStop() {
 
-        if (m_client_socket == null) {
+        if (m_client_socket != null) {
             try {
 
                 if (m_in_stream != null) m_client_socket.shutdownInput();
